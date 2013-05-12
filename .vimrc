@@ -17,6 +17,6 @@ au FileType html setlocal colorcolumn=
 
 set wildignore+=*_env,node_modules,*.pyc
 
-set nu!
+set number
 
 imap <C-BS> <C-W>
