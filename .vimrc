@@ -15,7 +15,7 @@ au FileType htmldjango setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 au FileType html setlocal colorcolumn=
 
-set wildignore+=*_env,*.pyc
+set wildignore+=*_env,node_modules,*.pyc
 
 set nu!
 
