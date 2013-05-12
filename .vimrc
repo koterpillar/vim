@@ -21,4 +21,7 @@ set wildignore+=*_env,node_modules,*.pyc
 
 set number
 
+set guioptions-=m
+set guioptions-=T
+
 imap <C-BS> <C-W>
