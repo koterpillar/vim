@@ -23,6 +23,8 @@ au FileType cucumber setlocal colorcolumn=
 
 set wildignore+=*_env,node_modules,*.pyc
 
+set ignorecase smartcase
+
 set number
 
 set guioptions-=m
