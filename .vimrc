@@ -17,6 +17,8 @@ au FileType htmldjango setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 au FileType html setlocal colorcolumn=
 
+au FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
 au FileType cucumber setlocal colorcolumn=
 
 set wildignore+=*_env,node_modules,*.pyc
