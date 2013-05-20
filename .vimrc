@@ -31,3 +31,4 @@ set guioptions-=m
 set guioptions-=T
 
 imap <C-BS> <C-W>
+imap <C-Del> <C-O>daw
