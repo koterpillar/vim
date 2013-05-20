@@ -32,3 +32,5 @@ set guioptions-=T
 
 imap <C-BS> <C-W>
 imap <C-Del> <C-O>daw
+
+nnoremap <silent> <C-W>t :tabnew<CR>
