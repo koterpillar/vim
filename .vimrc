@@ -35,4 +35,4 @@ imap <C-Del> <C-O>de
 
 nnoremap <silent> <C-W>t :tabnew<CR>
 
-cmap <silent> suw w !sudo sponge %
+command! W w !sudo sponge %
