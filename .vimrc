@@ -10,9 +10,11 @@ au FileType haskell setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 au FileType cabal setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
-au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
-au FileType htmldjango setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+au FileType perl setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+
+au FileType htmldjango setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 	\ colorcolumn=
 
 au FileType html setlocal colorcolumn=
