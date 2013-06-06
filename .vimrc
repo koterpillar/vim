@@ -13,6 +13,7 @@ au FileType cabal setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 au FileType perl setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+let perl_include_pod = 1
 
 au FileType htmldjango setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 	\ colorcolumn=
