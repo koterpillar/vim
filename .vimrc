@@ -2,7 +2,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-if v:version > 730
+if v:version >= 703
 	set colorcolumn=80
 endif
 
