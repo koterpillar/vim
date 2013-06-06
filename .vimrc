@@ -2,7 +2,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-set colorcolumn=80
+if v:version > 730
+	set colorcolumn=80
+endif
 
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
