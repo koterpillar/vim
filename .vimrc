@@ -42,3 +42,5 @@ imap <C-Del> <C-O>de
 nnoremap <silent> <C-W>t :tabnew<CR>
 
 command! W w !sudo sponge %
+
+set exrc
