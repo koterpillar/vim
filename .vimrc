@@ -30,6 +30,11 @@ au FileType cucumber setlocal tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=
 
 set wildignore+=dist,*_env,node_modules,*.pyc
 
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
 set ignorecase smartcase
 
 set number
