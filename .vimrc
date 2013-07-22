@@ -1,9 +1,10 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+
 syntax on
 filetype plugin indent on
 
-if v:version >= 703
+if exists('+colorcolumn')
 	set colorcolumn=80
 endif
 
