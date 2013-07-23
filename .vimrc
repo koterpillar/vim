@@ -29,7 +29,7 @@ au FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 au FileType cucumber setlocal tabstop=2 softtabstop=2 shiftwidth=2 colorcolumn=
 
-set wildignore+=dist,*_env,node_modules,*.pyc
+set wildignore+=dist,node_modules,*.pyc
 
 set undofile
 set undodir=$HOME/.vim/undo
