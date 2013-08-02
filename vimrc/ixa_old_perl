@@ -1,0 +1,8 @@
+let $PERL5LIB='lib/ixperl:../perl:app/lib:app/models:/home/alexey/xaos/fake-etch-perl'
+
+au BufNewFile,BufRead *.schtml set filetype=html
+au BufNewFile,BufRead vhost.conf set filetype=apache
+au BufNewFile,BufRead *.yml.conf set filetype=yaml
+set wildignore+=env,*.chtml
+
+au FileType javascript setlocal noexpandtab
