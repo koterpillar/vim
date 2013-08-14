@@ -4,6 +4,8 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+colorscheme summerfruit256
+
 if exists('+colorcolumn')
 	set colorcolumn=80
 endif
