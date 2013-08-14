@@ -16,6 +16,8 @@ au FileType haskell setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 au FileType cabal setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
+au FileType hamlet setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
 au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 let g:pymode_folding = 0
 let g:pymode_lint_checker = "pep8,pylint"

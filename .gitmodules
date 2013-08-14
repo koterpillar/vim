@@ -31,3 +31,6 @@
 [submodule "bundle/summerfruit256"]
 	path = bundle/summerfruit256
 	url = https://github.com/vim-scripts/summerfruit256.vim
+[submodule "bundle/html-template-syntax"]
+	path = bundle/html-template-syntax
+	url = https://github.com/pbrisbin/html-template-syntax.git
