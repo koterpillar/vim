@@ -1,3 +1,5 @@
 let $VIRTUAL_ENV=globpath($PWD, '*_env')
 let $PATH=$VIRTUAL_ENV . '/bin:' . $PATH
 set wildignore+=*_env
+
+let g:pymode_lint_config = "conf/pylint.conf"
