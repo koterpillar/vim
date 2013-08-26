@@ -1,5 +1,30 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Bundle itself
+Bundle 'gmarik/vundle'
+
+" Generic
+Bundle 'kien/ctrlp.vim'
+Bundle 'summerfruit256.vim'
+Bundle 'ervandew/supertab'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
+Bundle 'bronson/vim-trailing-whitespace'
+
+" JavaScript
+Bundle 'wookiehangover/jshint.vim'
+
+" Haskell
+Bundle 'bitc/vim-hdevtools'
+Bundle 'pbrisbin/html-template-syntax'
+
+" Python
+Bundle 'klen/python-mode'
 
 syntax on
 filetype plugin indent on
