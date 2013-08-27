@@ -6,3 +6,6 @@ au BufNewFile,BufRead *.yml.conf set filetype=yaml
 set wildignore+=env,*.chtml
 
 au FileType javascript setlocal noexpandtab
+
+abbreviate dump use Data::Dumper; print STDERR Dumper
+abbreviate cdump use IX::General qw(carp Dumper); carp Dumper
