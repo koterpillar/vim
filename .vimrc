@@ -30,9 +30,7 @@ syntax on
 filetype plugin indent on
 
 colorscheme summerfruit256
-if $COLORTERM == 'gnome-terminal'
-	set t_Co=256
-endif
+set t_Co=256
 
 if exists('+colorcolumn')
 	set colorcolumn=80
