@@ -65,10 +65,18 @@ au FileType cucumber setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 set wildignore+=dist,node_modules,*.pyc
 
-set undofile
-set undodir=$HOME/.vim/undo
-set undolevels=1000
-set undoreload=10000
+if exists('+undofile')
+	set undofile
+endif
+if exists('+undodir')
+	set undodir=$HOME/.vim/undo
+endif
+if exists('+undolevels')
+	set undolevels=1000
+endif
+if exists('+undoreload')
+	set undoreload=10000
+endif
 
 set ignorecase smartcase
 
