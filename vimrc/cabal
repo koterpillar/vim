@@ -1,1 +1,3 @@
+set wildignore+=cabal-dev
+
 let g:hdevtools_options = '-g-isrc -g-itests'
