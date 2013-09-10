@@ -65,6 +65,7 @@ au FileType cucumber setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 set wildignore+=dist,node_modules,*.pyc
 
+set history=1000
 if exists('+undofile')
 	set undofile
 endif
