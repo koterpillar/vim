@@ -32,6 +32,14 @@ filetype plugin indent on
 colorscheme summerfruit256
 set t_Co=256
 
+if has('gui_running')
+	if system('fc-list | grep -q "Anonymous Pro" && echo 1 || echo 0')
+		set guifont=Anonymous\ Pro\ 11
+	endif
+	set guioptions-=m
+	set guioptions-=T
+endif
+
 if exists('+colorcolumn')
 	set colorcolumn=80
 endif
@@ -82,9 +90,6 @@ endif
 set ignorecase smartcase
 
 set number
-
-set guioptions-=m
-set guioptions-=T
 
 imap <C-BS> <C-W>
 imap <C-Del> <C-O>de
