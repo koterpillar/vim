@@ -26,6 +26,7 @@ Bundle 'pbrisbin/html-template-syntax'
 
 " Python
 Bundle 'klen/python-mode'
+let g:syntastic_ignore_files = ['\.py$']
 
 syntax on
 filetype plugin indent on
