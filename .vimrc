@@ -95,6 +95,8 @@ set ignorecase smartcase
 
 set number
 
+set completeopt-=preview
+
 imap <C-BS> <C-W>
 imap <C-Del> <C-O>de
 
