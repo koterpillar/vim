@@ -4,3 +4,5 @@ let $PATH=$VIRTUAL_ENV . '/bin:' . $PATH
 set wildignore+=*_env
 
 let g:pymode_lint_config = "conf/pylint.conf"
+
+au BufNewFile,BufRead startenv set filetype=sh
