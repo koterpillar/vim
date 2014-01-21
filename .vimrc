@@ -28,6 +28,9 @@ Bundle 'pbrisbin/html-template-syntax'
 Bundle 'klen/python-mode'
 let g:syntastic_ignore_files = ['\.py$']
 
+" Docker
+Bundle 'ekalinin/Dockerfile.vim'
+
 syntax on
 filetype plugin indent on
 
