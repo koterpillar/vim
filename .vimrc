@@ -68,6 +68,8 @@ let g:pymode_lint_cwindow = 1
 au FileType htmldjango setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 	\ colorcolumn=
 
+au FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
 au FileType perl setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 let perl_include_pod = 1
 au FileType mason setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
