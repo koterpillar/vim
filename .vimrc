@@ -49,40 +49,38 @@ if exists('+colorcolumn')
 	set colorcolumn=80
 endif
 
-set softtabstop=-1
+" Follow tabstop
+set softtabstop=-1 shiftwidth=0
 
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
-au FileType haskell setlocal tabstop=4 shiftwidth=4 expandtab
+au FileType haskell setlocal tabstop=4 expandtab
 
-au FileType cabal setlocal tabstop=2 shiftwidth=2 expandtab
+au FileType cabal setlocal tabstop=2 expandtab
 
-au FileType hamlet setlocal tabstop=2 shiftwidth=2 expandtab
+au FileType hamlet setlocal tabstop=2 expandtab
 
 set wildignore+=cabal-dev
 
-au FileType python setlocal tabstop=4 shiftwidth=4 expandtab
+au FileType python setlocal tabstop=4 expandtab
 let g:pymode_folding = 0
 let g:pymode_lint_checker = "pep8,pylint"
 let g:pymode_lint_cwindow = 1
 
-au FileType htmldjango setlocal tabstop=2 shiftwidth=2 expandtab
-	\ colorcolumn=
+au FileType htmldjango setlocal tabstop=2 expandtab colorcolumn=
 
-au FileType yaml setlocal tabstop=2 shiftwidth=2 expandtab
+au FileType yaml setlocal tabstop=2 expandtab
 
-au FileType perl setlocal tabstop=4 shiftwidth=4 noexpandtab
+au FileType perl setlocal tabstop=4 noexpandtab
 let perl_include_pod = 1
-au FileType mason setlocal tabstop=2 shiftwidth=2 noexpandtab
+au FileType mason setlocal tabstop=2 noexpandtab
 
-au FileType html setlocal tabstop=2 shiftwidth=2 expandtab
-  \ colorcolumn=
+au FileType html setlocal tabstop=2 expandtab colorcolumn=
 
-au FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
+au FileType javascript setlocal tabstop=2 expandtab
 
-au FileType cucumber setlocal tabstop=2 shiftwidth=2 expandtab
-	\ colorcolumn=
+au FileType cucumber setlocal tabstop=2 expandtab colorcolumn=
 
 set wildignore+=dist,node_modules,*.pyc
 
