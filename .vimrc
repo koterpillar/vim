@@ -72,6 +72,8 @@ au FileType htmldjango setlocal tabstop=2 expandtab colorcolumn=
 
 au FileType yaml setlocal tabstop=2 expandtab
 
+au FileType ruby setlocal tabstop=2 expandtab
+
 au FileType perl setlocal tabstop=4 noexpandtab
 let perl_include_pod = 1
 au FileType mason setlocal tabstop=2 noexpandtab
