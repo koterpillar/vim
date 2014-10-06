@@ -20,6 +20,9 @@ Bundle 'godlygeek/tabular'
 " JavaScript
 Bundle 'wookiehangover/jshint.vim'
 
+" CSS et al.
+Bundle 'groenewege/vim-less'
+
 " Haskell
 Bundle 'bitc/vim-hdevtools'
 Bundle 'pbrisbin/html-template-syntax'
