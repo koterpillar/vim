@@ -30,6 +30,8 @@ Bundle 'pbrisbin/html-template-syntax'
 
 " Python
 Bundle 'klen/python-mode'
+Bundle 'hynek/vim-python-pep8-indent'
+let g:pymode_indent = 0
 let g:syntastic_ignore_files = ['\.py$']
 
 " Docker
