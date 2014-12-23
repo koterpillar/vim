@@ -18,11 +18,10 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-sleuth'
 
-" JavaScript
+" JavaScript, CSS et al.
 Bundle 'wookiehangover/jshint.vim'
-
-" CSS et al.
 Bundle 'groenewege/vim-less'
+Bundle 'mustache/vim-mustache-handlebars'
 
 " Haskell
 Bundle 'bitc/vim-hdevtools'
