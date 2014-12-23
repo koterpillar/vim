@@ -36,6 +36,9 @@ let g:syntastic_ignore_files = ['\.py$']
 " Docker
 Bundle 'ekalinin/Dockerfile.vim'
 
+" Other
+Bundle 'puppetlabs/puppet-syntax-vim'
+
 syntax on
 filetype plugin indent on
 
