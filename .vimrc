@@ -17,6 +17,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-sleuth'
+Bundle 'tpope/vim-surround'
 
 " JavaScript, CSS et al.
 Bundle 'wookiehangover/jshint.vim'
