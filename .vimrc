@@ -31,8 +31,15 @@ Bundle 'pbrisbin/html-template-syntax'
 " Python
 Bundle 'klen/python-mode'
 Bundle 'hynek/vim-python-pep8-indent'
+let g:pymode_folding = 0
 let g:pymode_indent = 0
 let g:syntastic_ignore_files = ['\.py$']
+let g:pymode_lint_checkers = ['pep8']
+let g:pymode_lint_cwindow = 1
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_regenerate_on_write = 0
+let g:pymode_rope_autoimport = 0
+let g:pymode_syntax_print_as_function = 1
 
 " Docker
 Bundle 'ekalinin/Dockerfile.vim'
@@ -73,9 +80,6 @@ au FileType hamlet setlocal tabstop=2 expandtab
 set wildignore+=cabal-dev
 
 au FileType python setlocal tabstop=4 expandtab
-let g:pymode_folding = 0
-let g:pymode_lint_checker = "pep8,pylint"
-let g:pymode_lint_cwindow = 1
 
 au FileType htmldjango setlocal tabstop=2 expandtab colorcolumn=
 
