@@ -49,6 +49,7 @@ Bundle 'puppetlabs/puppet-syntax-vim'
 
 syntax on
 filetype plugin indent on
+set hls
 
 colorscheme summerfruit256
 set t_Co=256
