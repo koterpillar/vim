@@ -60,6 +60,9 @@ if has('gui_running')
 	endif
 	set guioptions-=m
 	set guioptions-=T
+
+	" FIXME Windows are incorrectly resized when the tab line is shown
+	set showtabline=2
 endif
 
 if exists('+colorcolumn')
