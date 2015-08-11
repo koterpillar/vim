@@ -1,11 +1,12 @@
-set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+
 " Bundle itself
 Bundle 'gmarik/vundle'
+
 
 " Generic
 Bundle 'kien/ctrlp.vim'
@@ -19,14 +20,35 @@ Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
 
+
 " JavaScript, CSS et al.
 Bundle 'wookiehangover/jshint.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'mustache/vim-mustache-handlebars'
 
+au FileType html setlocal tabstop=2 expandtab colorcolumn=
+
+au FileType javascript setlocal tabstop=2 expandtab
+
+au FileType css setlocal tabstop=2 expandtab
+au FileType less setlocal tabstop=2 expandtab
+
+
 " Haskell
 Bundle 'bitc/vim-hdevtools'
 Bundle 'pbrisbin/html-template-syntax'
+
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
+au FileType haskell setlocal tabstop=4 expandtab
+
+au FileType cabal setlocal tabstop=2 expandtab
+
+au FileType hamlet setlocal tabstop=2 expandtab
+
+set wildignore+=cabal-dev
+
 
 " Python
 Bundle 'klen/python-mode'
@@ -41,11 +63,19 @@ let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_rope_autoimport = 0
 let g:pymode_syntax_print_as_function = 1
 
+au FileType python setlocal tabstop=4 expandtab
+au FileType htmldjango setlocal tabstop=2 expandtab colorcolumn=
+
+set wildignore+=dist,node_modules,*.pyc
+
+
 " Docker
 Bundle 'ekalinin/Dockerfile.vim'
 
+
 " Other
 Bundle 'puppetlabs/puppet-syntax-vim'
+
 
 syntax on
 filetype plugin indent on
@@ -72,21 +102,6 @@ endif
 " Follow tabstop
 set softtabstop=-1 shiftwidth=0
 
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
-au FileType haskell setlocal tabstop=4 expandtab
-
-au FileType cabal setlocal tabstop=2 expandtab
-
-au FileType hamlet setlocal tabstop=2 expandtab
-
-set wildignore+=cabal-dev
-
-au FileType python setlocal tabstop=4 expandtab
-
-au FileType htmldjango setlocal tabstop=2 expandtab colorcolumn=
-
 au FileType yaml setlocal tabstop=2 expandtab
 
 au FileType ruby setlocal tabstop=2 expandtab
@@ -95,16 +110,7 @@ au FileType perl setlocal tabstop=4 noexpandtab
 let perl_include_pod = 1
 au FileType mason setlocal tabstop=2 noexpandtab
 
-au FileType html setlocal tabstop=2 expandtab colorcolumn=
-
-au FileType javascript setlocal tabstop=2 expandtab
-
-au FileType css setlocal tabstop=2 expandtab
-au FileType less setlocal tabstop=2 expandtab
-
 au FileType cucumber setlocal tabstop=2 expandtab colorcolumn=
-
-set wildignore+=dist,node_modules,*.pyc
 
 set history=1000
 if exists('+undofile')
