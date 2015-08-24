@@ -1,7 +1,7 @@
 runtime vimrc/python
-let $VIRTUAL_ENV=globpath($PWD, '*_env')
-let $PATH=$VIRTUAL_ENV . '/bin:' . $PATH
-set wildignore+=*_env
+let $VIRTUAL_ENV='python_env'
+let $PATH='python_env/bin:' . $PATH
+set wildignore+=python_env
 
 let g:pymode_lint_config = "conf/pylint.conf"
 
