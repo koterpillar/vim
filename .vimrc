@@ -1,30 +1,42 @@
 filetype off
+filetype indent plugin on
+syn on
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+fun! SetupVAM()
+	let c = get(g:, 'vim_addon_manager', {})
+	let g:vim_addon_manager = c
+	let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
 
+	let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
+	if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
+		execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
+			\ shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
+	endif
 
-" Bundle itself
-Bundle 'gmarik/vundle'
+	call vam#ActivateAddons([], {})
+endfun
+call SetupVAM()
 
-
-" Generic
-Bundle 'kien/ctrlp.vim'
-Bundle 'summerfruit256.vim'
-Bundle 'ervandew/supertab'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-sleuth'
-Bundle 'tpope/vim-surround'
+call vam#ActivateAddons([
+	\ 'ctrlp',
+	\ 'summerfruit256',
+	\ 'Supertab',
+	\ 'Syntastic',
+	\ 'commentary',
+	\ 'fugitive',
+	\ 'trailing-whitespace',
+	\ 'Tabular',
+	\ 'sleuth',
+	\ 'surround',
+	\ ])
 
 
 " JavaScript, CSS et al.
-Bundle 'wookiehangover/jshint.vim'
-Bundle 'groenewege/vim-less'
-Bundle 'mustache/vim-mustache-handlebars'
+call vam#ActivateAddons([
+	\ 'jshint%3576',
+	\ 'github:groenewege/vim-less',
+	\ 'github:mustache/vim-mustache-handlebars',
+	\ ])
 
 au FileType html setlocal tabstop=2 expandtab colorcolumn=
 
@@ -35,8 +47,10 @@ au FileType less setlocal tabstop=2 expandtab
 
 
 " Haskell
-Bundle 'bitc/vim-hdevtools'
-Bundle 'pbrisbin/html-template-syntax'
+call vam#ActivateAddons([
+	\ 'github:bitc/vim-hdevtools',
+	\ 'github:pbrisbin/html-template-syntax',
+	\ ])
 
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
@@ -51,8 +65,10 @@ set wildignore+=cabal-dev
 
 
 " Python
-Bundle 'klen/python-mode'
-Bundle 'hynek/vim-python-pep8-indent'
+call vam#ActivateAddons([
+	\ 'github:klen/python-mode',
+	\ 'github:hynek/vim-python-pep8-indent',
+	\ ])
 let g:pymode_folding = 0
 let g:pymode_indent = 0
 let g:syntastic_ignore_files = ['\.py$']
@@ -70,11 +86,15 @@ set wildignore+=dist,node_modules,*.pyc
 
 
 " Docker
-Bundle 'ekalinin/Dockerfile.vim'
+call vam#ActivateAddons([
+	\ 'github:ekalinin/Dockerfile.vim'
+	\ ])
 
 
 " Other
-Bundle 'puppetlabs/puppet-syntax-vim'
+call vam#ActivateAddons([
+	\ 'github:puppetlabs/puppet-syntax-vim',
+	\ ])
 
 
 syntax on
