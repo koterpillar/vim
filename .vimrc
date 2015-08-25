@@ -18,6 +18,7 @@ endfun
 call SetupVAM()
 
 call vam#ActivateAddons([
+	\ 'ingo-library',
 	\ 'ctrlp',
 	\ 'summerfruit256',
 	\ 'Supertab',
@@ -28,6 +29,7 @@ call vam#ActivateAddons([
 	\ 'Tabular',
 	\ 'sleuth',
 	\ 'surround',
+	\ 'ConflictDetection',
 	\ ])
 
 
