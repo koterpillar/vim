@@ -30,6 +30,8 @@ call vam#ActivateAddons([
 	\ 'sleuth',
 	\ 'surround',
 	\ 'ConflictDetection',
+	\ 'CountJump',
+	\ 'ConflictMotions',
 	\ ])
 
 
