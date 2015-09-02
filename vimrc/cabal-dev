@@ -1,5 +1,0 @@
-runtime vimrc/cabal
-
-set wildignore+=cabal-dev
-
-let g:hdevtools_options .= ' -g-package-db=cabal-dev/packages-'.system('echo -n $(ghc --version) | sed -r "s/.+version //g;s/\\n//g"').'.conf'

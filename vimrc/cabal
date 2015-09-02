@@ -1,1 +1,1 @@
-let g:hdevtools_options = '-g-isrc -g-itests'
+let g:syntastic_haskell_hdevtools_args = '-g-isrc -g-itests'
