@@ -2,8 +2,6 @@ set wildignore+=env
 
 let g:pymode_lint_cwindow = 0
 
-abbreviate debug import pdb; pdb.set_trace()
-
 " Split an argument list so that each argument is on its own line
 function! DoSplitCommas()
 	s/^\( *\)\(.\+\))\([^)]*\)/\1\2,\r\1)\3/
