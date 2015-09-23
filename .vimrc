@@ -161,6 +161,8 @@ imap <C-Del> <C-O>de
 
 nnoremap <silent> <C-W>t :tabnew<CR>
 
+nnoremap <silent> <Leader>n :nohlsearch<CR>
+
 command! W w !sudo sponge %
 
 set exrc
