@@ -4,20 +4,37 @@ let g:pymode_lint_cwindow = 0
 
 " Split an argument list so that each argument is on its own line
 function! DoSplitCommas()
-	s/^\( *\)\(.\+\))\([^)]*\)/\1\2,\r\1)\3/
-	execute "normal! k"
+	" If the argument list is already split, join it back
 	let l:commas = 1
 	while l:commas
 		try
-			s/^\( *\)\(.\+\), \?\($\)\@!/\1\2,\r\1    /
+			s/\()\)\@<!,\n/,/
+		catch /^Vim\%((\a\+)\)\=:E486/
+			let l:commas = 0
+		endtry
+	endwhile
+
+	" Put the closing bracket onto a new line
+	s/^\( *\)\(.\+\))\([^)]*\)/\1\2,\r\1)\3/
+	" Return to the original line
+	execute "normal! k"
+
+	" Find all commas separating arguments (except the last) and put each
+	" argument onto its own line
+	let l:commas = 1
+	while l:commas
+		try
+			s/^\( *\)\(.\+\), *\($\)\@!/\1\2,\r\1    /
 			execute "normal! k"
 		catch /^Vim\%((\a\+)\)\=:E486/
 			let l:commas = 0
 		endtry
 	endwhile
+
+	" Put the first argument onto a new line
 	s/^\( *\)\([^(]\+\)(/\1\2(\r\1    /
 	execute "normal! k"
-	noh
+	nohlsearch
 endfunction
 
 command! SplitCommas call DoSplitCommas()
