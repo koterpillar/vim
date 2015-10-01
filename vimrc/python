@@ -32,7 +32,7 @@ function! DoSplitCommas()
 	endwhile
 
 	" Put the first argument onto a new line
-	s/^\( *\)\([^(]\+\)(/\1\2(\r\1    /
+	s/^\( *\)\([^(]\+\)( */\1\2(\r\1    /
 	execute "normal! k"
 	nohlsearch
 endfunction
