@@ -25,6 +25,7 @@ call vam#ActivateAddons([
 	\ 'Syntastic',
 	\ 'commentary',
 	\ 'fugitive',
+	\ 'github:tommcdo/vim-fubitive',
 	\ 'trailing-whitespace',
 	\ 'Tabular',
 	\ 'sleuth',
