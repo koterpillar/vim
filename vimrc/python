@@ -2,6 +2,8 @@ set wildignore+=env
 
 let g:pymode_lint_cwindow = 0
 
+au BufNewFile,BufRead *.html set filetype=htmldjango
+
 " Split an argument list so that each argument is on its own line
 function! DoSplitCommas()
 	" If the argument list is already split, join it back
