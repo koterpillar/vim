@@ -41,6 +41,7 @@ call vam#ActivateAddons([
 	\ 'jshint%3576',
 	\ 'github:groenewege/vim-less',
 	\ 'github:mustache/vim-mustache-handlebars',
+	\ 'github:elzr/vim-json',
 	\ ])
 
 au FileType html setlocal tabstop=2 expandtab colorcolumn=
@@ -49,6 +50,10 @@ au FileType javascript setlocal tabstop=2 expandtab
 
 au FileType css setlocal tabstop=2 expandtab
 au FileType less setlocal tabstop=2 expandtab
+
+au FileType yaml setlocal tabstop=2 expandtab
+
+au FileType json setlocal tabstop=2 expandtab
 
 
 " Haskell
@@ -126,8 +131,6 @@ endif
 
 " Follow tabstop
 set softtabstop=-1 shiftwidth=0
-
-au FileType yaml setlocal tabstop=2 expandtab
 
 au FileType ruby setlocal tabstop=2 expandtab
 
