@@ -18,6 +18,7 @@ endfun
 call SetupVAM()
 
 call vam#ActivateAddons([
+	\ 'ag',
 	\ 'ingo-library',
 	\ 'ctrlp',
 	\ 'summerfruit256',
@@ -166,6 +167,8 @@ imap <C-Del> <C-O>de
 nnoremap <silent> <C-W>t :tabnew<CR>
 
 nnoremap <silent> <Leader>n :nohlsearch<CR>
+
+let g:ag_working_path_mode="r"
 
 command! W w !sudo sponge %
 
