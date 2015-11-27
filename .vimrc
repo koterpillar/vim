@@ -34,6 +34,9 @@ call vam#ActivateAddons([
 	\ 'ConflictDetection',
 	\ 'CountJump',
 	\ 'ConflictMotions',
+	\ 'github:nathanaelkane/vim-indent-guides',
+	\ 'vim-indent-object',
+	\ 'vimproc',
 	\ ])
 
 
@@ -59,8 +62,11 @@ au FileType json setlocal tabstop=2 expandtab
 
 " Haskell
 call vam#ActivateAddons([
-	\ 'github:bitc/vim-hdevtools',
 	\ 'github:pbrisbin/html-template-syntax',
+	\ 'github:neovimhaskell/haskell-vim',
+	\ 'github:eagletmt/ghcmod-vim',
+	\ 'github:bitc/vim-hdevtools',
+	\ 'github:eagletmt/neco-ghc',
 	\ ])
 
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
@@ -68,11 +74,12 @@ au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
 au FileType haskell setlocal tabstop=4 expandtab
 
+let g:haskellmode_completion_ghc = 0
+au FileType haskell setlocal omnifunc=necoghc#omnifunc
+
 au FileType cabal setlocal tabstop=2 expandtab
 
 au FileType hamlet setlocal tabstop=2 expandtab
-
-set wildignore+=cabal-dev
 
 
 " Python
@@ -160,6 +167,7 @@ set ignorecase smartcase
 set number
 
 set completeopt-=preview
+let g:SuperTabDefaultCompletionType = "context"
 
 imap <C-BS> <C-W>
 imap <C-Del> <C-O>de
