@@ -58,6 +58,7 @@ au FileType less setlocal tabstop=2 expandtab
 au FileType yaml setlocal tabstop=2 expandtab
 
 au FileType json setlocal tabstop=2 expandtab
+let g:vim_json_syntax_conceal = 0
 
 
 " Haskell
