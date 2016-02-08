@@ -39,6 +39,10 @@ call vam#ActivateAddons([
 	\ 'vimproc',
 	\ ])
 
+" The default mode map for Syntastic
+let g:syntastic_mode_map = {
+	\ 'mode': 'active',
+	\ 'passive_filetypes': [] }
 
 " JavaScript, CSS et al.
 call vam#ActivateAddons([
@@ -90,9 +94,12 @@ call vam#ActivateAddons([
 	\ ])
 let g:pymode_folding = 0
 let g:pymode_indent = 0
-let g:syntastic_ignore_files = ['\.py$']
-let g:pymode_lint_checkers = ['pep8']
+
+let g:pymode_lint_checkers = ['pep8', 'pylint']
 let g:pymode_lint_cwindow = 1
+let g:pymode_lint_options_pep8 = {'max_line_length': 999}
+let g:pymode_lint_ignore = 'E501,I0011'
+
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_rope_autoimport = 0
@@ -100,6 +107,10 @@ let g:pymode_syntax_print_as_function = 1
 
 au FileType python setlocal tabstop=4 expandtab
 au FileType htmldjango setlocal tabstop=2 expandtab colorcolumn=
+
+" Disable Syntastic for Python files
+call add(g:syntastic_mode_map['passive_filetypes'], 'python')
+au FileType python let b:syntastic_auto_loc_list = 0
 
 set wildignore+=dist,node_modules,*.pyc
 
@@ -116,6 +127,7 @@ call vam#ActivateAddons([
 	\ ])
 
 
+" Generic
 syntax on
 filetype plugin indent on
 set hls
