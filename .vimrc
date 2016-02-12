@@ -135,6 +135,22 @@ set hls
 colorscheme summerfruit256
 set t_Co=256
 
+" Highlighting the word under cursor
+" http://stackoverflow.com/a/25233145/288201
+set updatetime=10
+
+highlight WordUnderCursor guibg=LightYellow ctermbg=LightYellow
+
+function! HighlightWordUnderCursor()
+    if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
+        exec 'match' 'WordUnderCursor' '/\V\<'.expand('<cword>').'\>/'
+    else
+        match none
+    endif
+endfunction
+
+autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
+
 if has('gui_running')
 	if system('fc-list | grep -q "Anonymous Pro" && echo 1 || echo 0')
 		set guifont=Anonymous\ Pro\ 11
