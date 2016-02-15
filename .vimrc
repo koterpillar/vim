@@ -37,6 +37,8 @@ call vam#ActivateAddons([
 	\ 'github:nathanaelkane/vim-indent-guides',
 	\ 'vim-indent-object',
 	\ 'vimproc',
+	\ 'vim-snippets',
+	\ 'UltiSnips',
 	\ ])
 
 " The default mode map for Syntastic
