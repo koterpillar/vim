@@ -39,6 +39,7 @@ call vam#ActivateAddons([
 	\ 'vimproc',
 	\ 'vim-snippets',
 	\ 'UltiSnips',
+	\ 'editorconfig-vim',
 	\ ])
 
 " The default mode map for Syntastic
@@ -208,6 +209,8 @@ nnoremap <silent> <C-W>t :tabnew<CR>
 nnoremap <silent> <Leader>n :nohlsearch<CR>
 
 let g:ag_working_path_mode="r"
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 command! W w !sudo sponge %
 
