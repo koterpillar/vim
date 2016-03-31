@@ -53,6 +53,8 @@ call vam#ActivateAddons([
 	\ 'github:groenewege/vim-less',
 	\ 'github:mustache/vim-mustache-handlebars',
 	\ 'github:elzr/vim-json',
+	\ 'github:raichoo/purescript-vim',
+	\ 'github:frigoeu/psc-ide-vim',
 	\ ])
 
 au FileType html setlocal tabstop=2 expandtab colorcolumn=
