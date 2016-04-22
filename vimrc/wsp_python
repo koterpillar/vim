@@ -1,6 +1,0 @@
-runtime vimrc/python
-let $VIRTUAL_ENV='python_env'
-let $PATH='python_env/bin:' . $PATH
-set wildignore+=python_env
-
-au BufNewFile,BufRead startenv set filetype=sh
