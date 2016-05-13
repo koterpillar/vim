@@ -119,6 +119,48 @@ au FileType python let b:syntastic_auto_loc_list = 0
 
 set wildignore+=dist,node_modules,*.pyc
 
+au FileType python command! -range=% Isort :<line1>,<line2>! isort -
+
+" Split an argument list so that each argument is on its own line
+function! DoSplitCommas()
+	" If the argument list is already split, join it back
+	try
+		s/(\n/(/
+	catch /^Vim\%((\a\+)\)\=:E486/
+	endtry
+
+	let l:commas = 1
+	while l:commas
+		try
+			s/\()\)\@<!,\n */,/
+		catch /^Vim\%((\a\+)\)\=:E486/
+			let l:commas = 0
+		endtry
+	endwhile
+
+	" Put the closing bracket onto a new line
+	s/^\( *\)\(.*[^,]\),\? *)\([^)]*\)/\1\2,\r\1)\3/
+	" Return to the original line
+	execute "normal! k"
+
+	" Find all commas separating arguments (except the last) and put each
+	" argument onto its own line
+	let l:commas = 1
+	while l:commas
+		try
+			s/^\( *\)\(.\+\), *\($\)\@!/\1\2,\r\1    /
+			execute "normal! k"
+		catch /^Vim\%((\a\+)\)\=:E486/
+			let l:commas = 0
+		endtry
+	endwhile
+
+	" Put the first argument onto a new line
+	s/^\( *\)\([^(]\+\)( */\1\2(\r\1    /
+	execute "normal! k"
+	nohlsearch
+endfunction
+
 au FileType python command! SplitCommas call DoSplitCommas()
 
 
