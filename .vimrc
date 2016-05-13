@@ -119,6 +119,8 @@ au FileType python let b:syntastic_auto_loc_list = 0
 
 set wildignore+=dist,node_modules,*.pyc
 
+au FileType python command! SplitCommas call DoSplitCommas()
+
 
 " Docker
 call vam#ActivateAddons([
