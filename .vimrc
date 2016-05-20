@@ -49,6 +49,7 @@ let g:syntastic_mode_map = {
 
 " JavaScript, CSS et al.
 call vam#ActivateAddons([
+	\ 'vim-javascript',
 	\ 'jshint%3576',
 	\ 'github:groenewege/vim-less',
 	\ 'github:mustache/vim-mustache-handlebars',
