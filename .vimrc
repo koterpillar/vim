@@ -51,11 +51,12 @@ let g:syntastic_mode_map = {
 call vam#ActivateAddons([
 	\ 'vim-javascript',
 	\ 'jshint%3576',
-	\ 'github:groenewege/vim-less',
 	\ 'github:mustache/vim-mustache-handlebars',
 	\ 'github:elzr/vim-json',
 	\ 'github:raichoo/purescript-vim',
 	\ 'github:frigoeu/psc-ide-vim',
+	\ 'github:groenewege/vim-less',
+	\ 'github:gorodinskiy/vim-coloresque',
 	\ ])
 
 au FileType html setlocal tabstop=2 expandtab colorcolumn=
