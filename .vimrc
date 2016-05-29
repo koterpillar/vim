@@ -56,7 +56,6 @@ call vam#ActivateAddons([
 	\ 'github:raichoo/purescript-vim',
 	\ 'github:frigoeu/psc-ide-vim',
 	\ 'github:groenewege/vim-less',
-	\ 'github:gorodinskiy/vim-coloresque',
 	\ ])
 
 au FileType html setlocal tabstop=2 expandtab colorcolumn=
