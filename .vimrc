@@ -70,6 +70,8 @@ au FileType yaml setlocal tabstop=2 expandtab
 au FileType json setlocal tabstop=2 expandtab
 let g:vim_json_syntax_conceal = 0
 
+set wildignore+=node_modules,bower_components
+
 
 " Haskell
 call vam#ActivateAddons([
@@ -95,11 +97,17 @@ au FileType hamlet setlocal tabstop=2 expandtab
 
 " Python
 call vam#ActivateAddons([
+	\ 'jedi-vim',
 	\ 'github:klen/python-mode',
 	\ 'github:hynek/vim-python-pep8-indent',
 	\ ])
+
+let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#usages_command = "<leader>u"
+
 let g:pymode_folding = 0
 let g:pymode_indent = 0
+let g:pymode_run = 0
 
 let g:pymode_lint_checkers = ['pep8', 'pylint']
 let g:pymode_lint_cwindow = 0
@@ -109,6 +117,7 @@ let g:pymode_lint_ignore = 'E501,I0011,I0012'
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_rope_autoimport = 0
+let g:pymode_rope_completion = 0
 let g:pymode_syntax_print_as_function = 1
 
 au FileType python setlocal tabstop=4 expandtab
@@ -118,7 +127,7 @@ au FileType htmldjango setlocal tabstop=2 expandtab colorcolumn=
 call add(g:syntastic_mode_map['passive_filetypes'], 'python')
 au FileType python let b:syntastic_auto_loc_list = 0
 
-set wildignore+=dist,node_modules,*.pyc
+set wildignore+=dist,*.pyc
 
 au FileType python command! -range=% Isort :<line1>,<line2>! isort -
 
