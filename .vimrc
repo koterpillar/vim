@@ -102,6 +102,7 @@ call vam#ActivateAddons([
 	\ 'github:hynek/vim-python-pep8-indent',
 	\ ])
 
+let g:jedi#show_call_signatures = "0"
 let g:jedi#use_splits_not_buffers = "right"
 let g:jedi#usages_command = "<leader>u"
 
