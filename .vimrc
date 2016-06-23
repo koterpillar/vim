@@ -20,7 +20,7 @@ call SetupVAM()
 call vam#ActivateAddons([
 	\ 'ag',
 	\ 'ingo-library',
-	\ 'ctrlp',
+	\ 'github:ctrlpvim/ctrlp.vim',
 	\ 'summerfruit256',
 	\ 'Supertab',
 	\ 'Syntastic',
