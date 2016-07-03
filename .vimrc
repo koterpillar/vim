@@ -271,4 +271,20 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 command! W w !sudo sponge %
 
+" Write all buffers, save a session and quit
+function! SaveSession()
+    wall
+    mksession!
+    qall
+endfunction
+
+" Load and remove the session
+function! LoadSession()
+    source Session.vim
+    silent !rm Session.vim
+endfunction
+
+command! SaveSession call SaveSession()
+command! LoadSession call LoadSession()
+
 set exrc
