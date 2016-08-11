@@ -75,7 +75,7 @@ set wildignore+=node_modules,bower_components
 
 " Haskell
 call vam#ActivateAddons([
-	\ 'github:pbrisbin/html-template-syntax',
+	\ 'github:pbrisbin/vim-syntax-shakespeare',
 	\ 'github:neovimhaskell/haskell-vim',
 	\ 'github:eagletmt/ghcmod-vim',
 	\ 'github:bitc/vim-hdevtools',
