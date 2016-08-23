@@ -1,7 +1,3 @@
-filetype off
-filetype indent plugin on
-syn on
-
 fun! SetupVAM()
 	let c = get(g:, 'vim_addon_manager', {})
 	let g:vim_addon_manager = c
@@ -190,7 +186,7 @@ call vam#ActivateAddons([
 " Generic
 syntax on
 filetype plugin indent on
-set hls
+set hlsearch
 
 colorscheme summerfruit256
 set t_Co=256
