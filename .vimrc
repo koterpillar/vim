@@ -73,13 +73,14 @@ call vam#ActivateAddons([
 	\ 'github:pbrisbin/vim-syntax-shakespeare',
 	\ 'github:neovimhaskell/haskell-vim',
 	\ 'github:eagletmt/ghcmod-vim',
-	\ 'github:bitc/vim-hdevtools',
 	\ 'github:eagletmt/neco-ghc',
 	\ ])
 
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
+au FileType haskell nnoremap <buffer> <silent> tw :GhcModTypeInsert<CR>
+au FileType haskell nnoremap <buffer> <silent> ts :GhcModSplitFunCase<CR>
+au FileType haskell nnoremap <buffer> <silent> tq :GhcModType<CR>
+au FileType haskell nnoremap <buffer> <silent> te :GhcModTypeClear<CR>
+
 au FileType haskell setlocal tabstop=4 expandtab
 
 let g:haskellmode_completion_ghc = 0
