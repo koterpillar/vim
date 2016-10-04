@@ -14,6 +14,7 @@ endfun
 call SetupVAM()
 
 call vam#ActivateAddons([
+	\ 'ack',
 	\ 'ingo-library',
 	\ 'github:ctrlpvim/ctrlp.vim',
 	\ 'summerfruit256',
@@ -261,7 +262,8 @@ nnoremap <silent> <C-W>t :tabnew<CR>
 
 nnoremap <silent> <Leader>n :nohlsearch<CR>
 
-set grepprg=rg\ --line-number\ --column
+set grepprg=rg\ --vimgrep
+let g:ackprg='rg --vimgrep'
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
