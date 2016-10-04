@@ -125,7 +125,7 @@ au FileType htmldjango setlocal tabstop=2 expandtab colorcolumn=
 call add(g:syntastic_mode_map['passive_filetypes'], 'python')
 au FileType python let b:syntastic_auto_loc_list = 0
 
-set wildignore+=dist,*.pyc
+set wildignore+=dist,htmlcov,*.pyc
 
 au FileType python command! -range=% Isort :<line1>,<line2>! isort -
 
