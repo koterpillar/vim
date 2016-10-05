@@ -199,11 +199,11 @@ set updatetime=10
 highlight WordUnderCursor guibg=LightYellow ctermbg=LightYellow
 
 function! HighlightWordUnderCursor()
-    if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
-        exec 'match' 'WordUnderCursor' '/\V\<'.expand('<cword>').'\>/'
-    else
-        match none
-    endif
+	if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
+		exec 'match' 'WordUnderCursor' '/\V\<'.expand('<cword>').'\>/'
+	else
+		match none
+	endif
 endfunction
 
 autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
@@ -271,15 +271,15 @@ command! W w !sudo sponge %
 
 " Write all buffers, save a session and quit
 function! SaveSession()
-    wall
-    mksession!
-    qall
+	all
+	mksession!
+	qall
 endfunction
 
 " Load and remove the session
 function! LoadSession()
-    source Session.vim
-    silent !rm Session.vim
+	source Session.vim
+	silent !rm Session.vim
 endfunction
 
 command! SaveSession call SaveSession()
