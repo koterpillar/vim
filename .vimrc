@@ -73,6 +73,7 @@ au FileType haskell nnoremap <buffer> <silent> tq :GhcModType<CR>
 au FileType haskell nnoremap <buffer> <silent> te :GhcModTypeClear<CR>
 
 au FileType haskell setlocal tabstop=4 expandtab
+au FileType haskell setlocal formatprg=hindent
 
 let g:haskellmode_completion_ghc = 0
 au FileType haskell setlocal omnifunc=necoghc#omnifunc
