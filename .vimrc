@@ -75,7 +75,7 @@ au FileType haskell nnoremap <buffer> <silent> te :GhcModTypeClear<CR>
 au FileType haskell setlocal tabstop=4 expandtab
 au FileType haskell setlocal formatprg=hindent
 
-let g:haskellmode_completion_ghc = 0
+let g:haskellmode_completion_ghc = 1
 au FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 au FileType cabal setlocal tabstop=2 expandtab
@@ -241,7 +241,6 @@ set ignorecase smartcase
 set number
 
 set completeopt-=preview
-let g:SuperTabDefaultCompletionType = "context"
 
 imap <C-BS> <C-W>
 imap <C-Del> <C-O>de
