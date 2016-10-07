@@ -1,36 +1,42 @@
-fun! SetupVimPlug()
-	let autoload = expand('$HOME', 1) . '/.vim/autoload'
-	if !isdirectory(autoload)
-		execute '!curl --create-dirs --location -o ~/.vim/autoload/plug.vim '
-			\ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+fun! SetupVAM()
+	let c = get(g:, 'vim_addon_manager', {})
+	let g:vim_addon_manager = c
+	let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
+
+	let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
+	if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
+		execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
+			\ shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
 	endif
 
+	call vam#ActivateAddons([], {})
 endfun
-call SetupVimPlug()
-call plug#begin()
+call SetupVAM()
 
-Plug 'mileszs/ack.vim'
-Plug 'ingo-library'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-scripts/summerfruit256.vim'
-Plug 'Supertab'
-Plug 'Syntastic'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tommcdo/vim-fubitive'
-Plug 'trailing-whitespace'
-Plug 'Tabular'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-surround'
-Plug 'ConflictDetection'
-Plug 'CountJump'
-Plug 'ConflictMotions'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'vim-indent-object'
-Plug 'Shougo/vimproc', { 'do': 'make' }
-Plug 'honza/vim-snippets'
-Plug 'UltiSnips'
-Plug 'editorconfig-vim'
+call vam#ActivateAddons([
+	\ 'ack',
+	\ 'ingo-library',
+	\ 'github:ctrlpvim/ctrlp.vim',
+	\ 'summerfruit256',
+	\ 'Supertab',
+	\ 'Syntastic',
+	\ 'commentary',
+	\ 'fugitive',
+	\ 'github:tommcdo/vim-fubitive',
+	\ 'trailing-whitespace',
+	\ 'Tabular',
+	\ 'sleuth',
+	\ 'surround',
+	\ 'ConflictDetection',
+	\ 'CountJump',
+	\ 'ConflictMotions',
+	\ 'github:nathanaelkane/vim-indent-guides',
+	\ 'vim-indent-object',
+	\ 'vimproc',
+	\ 'vim-snippets',
+	\ 'UltiSnips',
+	\ 'editorconfig-vim',
+	\ ])
 
 " The default mode map for Syntastic
 let g:syntastic_mode_map = {
@@ -38,13 +44,15 @@ let g:syntastic_mode_map = {
 	\ 'passive_filetypes': [] }
 
 " JavaScript, CSS et al.
-Plug 'vim-javascript'
-Plug 'wookiehangover/jshint.vim'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'elzr/vim-json'
-Plug 'raichoo/purescript-vim'
-Plug 'frigoeu/psc-ide-vim'
-Plug 'groenewege/vim-less'
+call vam#ActivateAddons([
+	\ 'vim-javascript',
+	\ 'github:wookiehangover/jshint.vim',
+	\ 'github:mustache/vim-mustache-handlebars',
+	\ 'github:elzr/vim-json',
+	\ 'github:raichoo/purescript-vim',
+	\ 'github:frigoeu/psc-ide-vim',
+	\ 'github:groenewege/vim-less',
+	\ ])
 
 au FileType html setlocal tabstop=2 expandtab colorcolumn=
 
@@ -62,10 +70,12 @@ set wildignore+=node_modules,bower_components
 
 
 " Haskell
-Plug 'pbrisbin/vim-syntax-shakespeare'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'eagletmt/ghcmod-vim'
-Plug 'eagletmt/neco-ghc'
+call vam#ActivateAddons([
+	\ 'github:pbrisbin/vim-syntax-shakespeare',
+	\ 'github:neovimhaskell/haskell-vim',
+	\ 'github:eagletmt/ghcmod-vim',
+	\ 'github:eagletmt/neco-ghc',
+	\ ])
 
 au FileType haskell nnoremap <buffer> <silent> tw :GhcModTypeInsert<CR>
 au FileType haskell nnoremap <buffer> <silent> ts :GhcModSplitFunCase<CR>
@@ -84,9 +94,11 @@ au FileType hamlet setlocal tabstop=2 expandtab
 
 
 " Python
-Plug 'davidhalter/jedi-vim'
-Plug 'klen/python-mode'
-Plug 'hynek/vim-python-pep8-indent'
+call vam#ActivateAddons([
+	\ 'github:davidhalter/jedi-vim',
+	\ 'github:klen/python-mode',
+	\ 'github:hynek/vim-python-pep8-indent',
+	\ ])
 
 let g:jedi#show_call_signatures = "0"
 let g:jedi#use_splits_not_buffers = "right"
@@ -162,15 +174,16 @@ au FileType python command! SplitCommas call DoSplitCommas()
 
 
 " Docker
-Plug 'ekalinin/Dockerfile.vim'
+call vam#ActivateAddons([
+	\ 'github:ekalinin/Dockerfile.vim'
+	\ ])
 
 
 " Other
-Plug 'puppetlabs/puppet-syntax-vim'
+call vam#ActivateAddons([
+	\ 'github:puppetlabs/puppet-syntax-vim',
+	\ ])
 
-
-" End plugins
-call plug#end()
 
 " Generic
 syntax on
