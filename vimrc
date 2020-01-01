@@ -55,6 +55,8 @@ if exists('+colorcolumn')
 	set colorcolumn=80
 endif
 
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
 " Follow tabstop
 set softtabstop=-1 shiftwidth=0
 
