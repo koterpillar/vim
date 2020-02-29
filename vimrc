@@ -1,24 +1,17 @@
-fun! SetupVAM()
-	let c = get(g:, 'vim_addon_manager', {})
-	let g:vim_addon_manager = c
-	let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-	let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
-	if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
-		execute '!git clone --depth=1 https://github.com/MarcWeber/vim-addon-manager.git '
-			\ shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
-	endif
+call plug#begin('~/.vim/plugged')
 
-	call vam#ActivateAddons([], {})
-endfun
-call SetupVAM()
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sleuth'
+Plug 'editorconfig/editorconfig-vim'
 
-call vam#ActivateAddons([
-	\ 'github:ctrlpvim/ctrlp.vim',
-	\ 'commentary',
-	\ 'sleuth',
-	\ 'editorconfig-vim',
-	\ ])
+call plug#end()
 
 au FileType html setlocal tabstop=2 expandtab colorcolumn=
 
